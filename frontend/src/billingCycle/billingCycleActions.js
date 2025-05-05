@@ -11,3 +11,10 @@ export function getList() {
     }
 }
 
+export function create(values) {
+    axios.post(`${BASE_URL}/billingCycle`, values)
+    return {
+        type: 'TEMP'
+    }
+}
+
