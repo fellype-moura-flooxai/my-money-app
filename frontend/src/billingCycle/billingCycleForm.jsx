@@ -21,7 +21,8 @@ class BillingCycleForm extends Component {
                         label='Ano' cols='12 4' placeholder='Informe o ano' />
                 </div>
                 <div className='box-footer'>
-                    <button type='submit' className='btn btn-primary'>submit</button>
+                    <button type='submit' className={`btn btn-${this.props.submitClass}`}>{this.props.submitLabel}
+                    </button>
                     <button type='button' className='btn btn-default'
                         onClick={this.props.init}>Cancelar</button>
                 </div>
@@ -30,6 +31,6 @@ class BillingCycleForm extends Component {
     }
 }
 
-BillingCycleForm = reduxForm({ form: 'billingCycleForm', destroyOnUnmount: false})(BillingCycleForm)
+BillingCycleForm = reduxForm({ form: 'billingCycleForm', destroyOnUnmount: false })(BillingCycleForm)
 const mapDispatchToProps = dispatch => bindActionCreators({ init }, dispatch)
 export default connect(null, mapDispatchToProps)(BillingCycleForm)
